@@ -31,29 +31,34 @@
     }
     .wrap { max-width: 980px; margin: 0 auto; }
     h1 {
-      margin: 0 0 12px;
+      margin: 0;
       font-size: clamp(2.4rem, 7vw, 5rem);
       line-height: 0.98;
       letter-spacing: 0;
       color: var(--blue);
     }
-    .lead {
-      margin: 0;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
     main { padding: 32px 24px 64px; }
-    .toolbar {
+    .course { margin-bottom: 44px; }
+    .course-header {
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+    h2 {
+      margin: 0;
+      color: var(--blue);
+      font-size: 1.65rem;
+      line-height: 1.2;
+      letter-spacing: 0;
     }
     a.button {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       min-height: 42px;
       padding: 10px 14px;
       border: 1px solid var(--line);
@@ -64,25 +69,19 @@
       background: var(--panel);
     }
     a.button:hover { background: var(--soft); }
-    .lecture-list {
-      display: grid;
-      gap: 14px;
-    }
+    .lecture-list { display: grid; gap: 14px; }
     .lecture {
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 18px;
       background: var(--panel);
     }
-    .lecture h2 {
-      margin: 0 0 8px;
+    .lecture h3 {
+      margin: 0 0 12px;
       color: var(--blue);
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       line-height: 1.25;
-    }
-    .lecture p {
-      margin: 0 0 14px;
-      color: var(--muted);
+      letter-spacing: 0;
     }
     .links { display: flex; gap: 10px; flex-wrap: wrap; }
     footer {
@@ -90,6 +89,11 @@
       color: var(--muted);
       padding: 20px 24px 40px;
       font-size: 0.95rem;
+    }
+    @media (max-width: 640px) {
+      .course-header { align-items: flex-start; flex-direction: column; }
+      a.button { width: 100%; }
+      .links a.button { width: auto; }
     }
   </style>
 </head>
@@ -101,52 +105,120 @@
   </header>
   <main>
     <div class="wrap">
-      <div class="toolbar">
-        <a class="button" href="https://www.youtube.com/playlist?list=PLaCK3nTYIR6hOC6s9efhtXh5KaNpxDrbh">YouTube playlist</a>
-      </div>
-      <section class="lecture-list" aria-label="Lecture handouts">
+      <section class="course" aria-labelledby="general-course">
+        <div class="course-header">
+          <h2 id="general-course">General</h2>
+          <a class="button" href="https://www.youtube.com/playlist?list=PLaCK3nTYIR6hOC6s9efhtXh5KaNpxDrbh">Course Playlist</a>
+        </div>
+        <div class="lecture-list">
         <article class="lecture">
-          <h2>01 - Antepartum Fetal Testing: NST, BPP, and Modified BPP</h2>
+          <h3>01 - Antepartum Fetal Testing: NST, BPP, and Modified BPP</h3>
           <div class="links">
             <a class="button" href="pdfs/01-antepartum-fetal-testing-nst-bpp-modified-bpp.pdf">Read</a>
             <a class="button" href="https://youtu.be/XyrQDhBJIQg">Listen</a>
           </div>
         </article>
         <article class="lecture">
-          <h2>02 - Amniotic Fluid Physiology and Oligohydramnios</h2>
+          <h3>02 - Amniotic Fluid Physiology and Oligohydramnios</h3>
           <div class="links">
             <a class="button" href="pdfs/02-amniotic-fluid-physiology-and-oligohydramnios.pdf">Read</a>
             <a class="button" href="https://youtu.be/fbPyV6620ig">Listen</a>
           </div>
         </article>
         <article class="lecture">
-          <h2>03 - PROM and PPROM</h2>
+          <h3>03 - PROM and PPROM</h3>
           <div class="links">
             <a class="button" href="pdfs/03-prom-pprom.pdf">Read</a>
             <a class="button" href="https://youtu.be/LHt-JXWYUdE">Listen</a>
           </div>
         </article>
         <article class="lecture">
-          <h2>04 - Diabetes in Pregnancy</h2>
+          <h3>04 - Diabetes in Pregnancy</h3>
           <div class="links">
             <a class="button" href="pdfs/04-diabetes-in-pregnancy.pdf">Read</a>
             <a class="button" href="https://youtu.be/yS_pgv_oRJU">Listen</a>
           </div>
         </article>
         <article class="lecture">
-          <h2>05 - Early Pregnancy Loss, Ectopic Pregnancy, and Recurrent Pregnancy Loss</h2>
+          <h3>05 - Early Pregnancy Loss, Ectopic Pregnancy, and Recurrent Pregnancy Loss</h3>
           <div class="links">
             <a class="button" href="pdfs/05-early-pregnancy-loss-ectopic-rpl.pdf">Read</a>
             <a class="button" href="https://youtu.be/gHkBgaBzNoM">Listen</a>
           </div>
         </article>
         <article class="lecture">
-          <h2>06 - Labour Induction, Caesarean Risk, and Propensity Scores</h2>
+          <h3>06 - Labour Induction, Caesarean Risk, and Propensity Scores</h3>
           <div class="links">
             <a class="button" href="pdfs/06-labour-induction-caesarean-risk-propensity-scores.pdf">Read</a>
             <a class="button" href="https://youtu.be/NPH5_Ci8RvU">Listen</a>
           </div>
         </article>
+        </div>
+      </section>
+
+      <section class="course" aria-labelledby="twin-course">
+        <div class="course-header">
+          <h2 id="twin-course">Twin Pregnancy</h2>
+          <a class="button" href="https://www.youtube.com/playlist?list=PLaCK3nTYIR6i8ffXKOA8KtUHh2fZrT5pT">Course Playlist</a>
+        </div>
+        <div class="lecture-list">
+        <article class="lecture">
+          <h3>01 - Diagnosis, Chorionicity, and Amnionicity</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-01-diagnosis-chorionicity-amnionicity.pdf">Read</a>
+            <a class="button" href="https://youtu.be/bJ1aHHWKTBk">Listen</a>
+          </div>
+        </article>
+        <article class="lecture">
+          <h3>02 - Maternal Physiology and Global Risk</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-02-maternal-physiology-global-risk.pdf">Read</a>
+            <a class="button" href="https://youtu.be/MJiQO8TWbXY">Listen</a>
+          </div>
+        </article>
+        <article class="lecture">
+          <h3>03 - Preterm Birth, Cervix, and Prevention</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-03-preterm-birth-cervix-prevention.pdf">Read</a>
+            <a class="button" href="https://youtu.be/NBIo4yu-k2U">Listen</a>
+          </div>
+        </article>
+        <article class="lecture">
+          <h3>04 - Monochorionic Disease</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-04-monochorionic-disease.pdf">Read</a>
+            <a class="button" href="https://youtu.be/jC-d3THZRec">Listen</a>
+          </div>
+        </article>
+        <article class="lecture">
+          <h3>05 - Surveillance and Prenatal Diagnosis</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-05-surveillance-prenatal-diagnosis.pdf">Read</a>
+            <a class="button" href="https://youtu.be/Or1kzwOHMSs">Listen</a>
+          </div>
+        </article>
+        <article class="lecture">
+          <h3>06 - Fertility, Reduction, and Counseling</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-06-fertility-reduction-counseling.pdf">Read</a>
+            <a class="button" href="https://youtu.be/G5uWmZP_pVs">Listen</a>
+          </div>
+        </article>
+        <article class="lecture">
+          <h3>07 - Delivery Timing and Route</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-07-delivery-timing-route.pdf">Read</a>
+            <a class="button" href="https://youtu.be/azuaI95PRPo">Listen</a>
+          </div>
+        </article>
+        <article class="lecture">
+          <h3>08 - Intrapartum Execution and Emergencies</h3>
+          <div class="links">
+            <a class="button" href="pdfs/twin-pregnancy-08-intrapartum-execution-emergencies.pdf">Read</a>
+            <a class="button" href="https://youtu.be/eR8VrDgN2so">Listen</a>
+          </div>
+        </article>
+        </div>
       </section>
     </div>
   </main>
